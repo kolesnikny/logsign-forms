@@ -51,26 +51,36 @@ const SignUpForm = (props) => {
               value={values.role}
               error={errors.role}
             >
-              <label>
-                <Field type="radio" name="role" value="buyer" />
-                <p>
-                  Join As a Buyer
-                  <span>
-                    I am looking for a Name, Logo or Tagline for my business,
-                    brand or product.
-                  </span>
-                </p>
-              </label>
-              <label>
-                <Field type="radio" name="role" value="creative" />
-                <p>
-                  Join As a Creative or Marketplace Seller{' '}
-                  <span>
-                    I plan to submit name ideas, Logo designs or sell names in
-                    Domain Marketplace.
-                  </span>
-                </p>
-              </label>
+              <Input
+                type="radio"
+                name="role"
+                value="buyer"
+                label={
+                  <p>
+                    Join As a Buyer
+                    <span>
+                      I am looking for a Name, Logo or Tagline for my business,
+                      brand or product.
+                    </span>
+                  </p>
+                }
+                cn="radio-group-label"
+              />
+              <Input
+                type="radio"
+                name="role"
+                value="creative"
+                label={
+                  <p>
+                    Join As a Creative or Marketplace Seller{' '}
+                    <span>
+                      I plan to submit name ideas, Logo designs or sell names in
+                      Domain Marketplace.
+                    </span>
+                  </p>
+                }
+                cn="radio-group-label"
+              />
             </div>
 
             <label className={cx(styles['checkbox-field'])}>

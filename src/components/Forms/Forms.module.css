@@ -74,29 +74,7 @@
 .sign-up-radio-group{
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
     row-gap: 15px;
-}
-
-.sign-up-radio-group  label{
-    color: #fff;
-    width: 100%;
-    border: 1px solid white;
-    display: flex;
-}
-
-.sign-up-radio-group p{
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-}
-
-
-.sign-up-radio-group  span{
-    font-size: 0.8em;
 }
 
 

@@ -6,15 +6,6 @@ import { LOG_IN_SHEMA } from '../../../utils/validationShemas';
 import styles from '../Forms.module.css';
 
 const LogInForm = (props) => {
-  // const setWithExpiry = (key, value, expiration) => {
-  //   const now = new Date();
-  //   const item = {
-  //     value: { email: value.email, password: value.password },
-  //     expiry: now.getTime() + expiration,
-  //   };
-  //   localStorage.setItem(key, JSON.stringify(item));
-  // };
-
   return (
     <>
       <Formik
@@ -22,10 +13,6 @@ const LogInForm = (props) => {
         validationSchema={LOG_IN_SHEMA}
         onSubmit={(values) => {
           console.log(values);
-          // if saveData checked save data to local storage
-          // if (values.isSaveData) {
-          //   setWithExpiry(values);
-          // }
         }}
       >
         {() => (
