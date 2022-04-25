@@ -1,17 +1,104 @@
 .form-container{
     box-sizing: border-box;
     min-width: 250px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    
-}
-
-.log-in{
     justify-content: stretch;
     align-items: stretch;
+    gap: 25px;
 }
+
+.form-container > h3{
+    color:#fff;
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.form-container > p{
+    color:#fff;
+    margin: 0;
+    text-align: center;
+}
+
+.form-enterance-settings{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-enterance-settings{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-field{
+    color: #fff;
+    font-size: 0.7em;
+}
+
+.form-enterance-settings > a{
+    color: #fff;
+    font-size: 0.7em;
+    text-decoration: none;
+}
+
+.form-submit{
+    width: 100%;
+    color: #fff;
+    min-height: 50px;
+    background-color: #28d2d0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.sign-in-inputs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 25px;
+}
+
+.sign-in-inputs > label{
+    width: 45%;
+}
+
 
 .sign-up-radio-group{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    row-gap: 15px;
 }
+
+.sign-up-radio-group  label{
+    color: #fff;
+    width: 100%;
+    border: 1px solid white;
+    display: flex;
+}
+
+.sign-up-radio-group p{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+
+.sign-up-radio-group  span{
+    font-size: 0.8em;
+}
+
+
+
+

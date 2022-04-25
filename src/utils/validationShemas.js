@@ -36,9 +36,6 @@ export const SIGN_UP_SHEMA = Yup.object({
     .oneOf([Yup.ref('password'), 'should be similar the password'])
     .required(),
   role: Yup.string()
-    .oneOf(
-      ['creative', 'buyer'],
-      'Please specify whether you are a Creative or a Buyer'
-    )
+    .oneOf(['creative', 'buyer'])
     .required('Please specify whether you are a Creative or a Buyer'),
 });

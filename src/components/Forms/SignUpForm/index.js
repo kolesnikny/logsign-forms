@@ -7,8 +7,7 @@ import styles from '../Forms.module.css';
 
 const SignUpForm = (props) => {
   return (
-    <section>
-      {props.children}
+    <>
       <Formik
         initialValues={{
           firstName: '',
@@ -25,9 +24,10 @@ const SignUpForm = (props) => {
           console.log(values);
         }}
       >
-        {({ errors, touched, isValidating }) => (
+        {({ values, errors }) => (
           <Form className={cx(styles['form-container'])}>
-            <div>
+            {props.children}
+            <div className={cx(styles['sign-in-inputs'])}>
               <Input name="firstName" type="text" placeholder="First name" />
               <Input name="lastName" type="text" placeholder="Last name" />
               <Input
@@ -43,38 +43,48 @@ const SignUpForm = (props) => {
                 placeholder="Password Confirmation"
               />
             </div>
+
             <div
               role="group"
-              aria-labelledby="sign-up-radio-group"
+              aria-labelledby="role"
               className={styles['sign-up-radio-group']}
+              value={values.role}
+              error={errors.role}
             >
               <label>
-                <Input type="radio" name="role" value="buyer" />
-                Join As a Buyer
-                <span>
-                  I am looking for a Name, Logo or Tagline for my business,
-                  brand or product.
-                </span>
+                <Field type="radio" name="role" value="buyer" />
+                <p>
+                  Join As a Buyer
+                  <span>
+                    I am looking for a Name, Logo or Tagline for my business,
+                    brand or product.
+                  </span>
+                </p>
               </label>
               <label>
-                <Input type="radio" name="role" value="creative" />
-                Join As a Creative or Marketplace Seller{' '}
-                <span>
-                  I plan to submit name ideas, Logo designs or sell names in
-                  Domain Marketplace.
-                </span>
+                <Field type="radio" name="role" value="creative" />
+                <p>
+                  Join As a Creative or Marketplace Seller{' '}
+                  <span>
+                    I plan to submit name ideas, Logo designs or sell names in
+                    Domain Marketplace.
+                  </span>
+                </p>
               </label>
             </div>
-            <label>
-              <Input name="isSubscribe" type="checkbox" />
+
+            <label className={cx(styles['checkbox-field'])}>
+              <Field name="isSubscribe" type="checkbox" />
               Allow Squadhelp to send marketing/promotional offers from time to
               time
             </label>
-            <button type="submit">Create account</button>
+            <button type="submit" className={cx(styles['form-submit'])}>
+              Create account
+            </button>
           </Form>
         )}
       </Formik>
-    </section>
+    </>
   );
 };
 

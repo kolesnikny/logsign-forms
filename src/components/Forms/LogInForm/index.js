@@ -17,7 +17,6 @@ const LogInForm = (props) => {
 
   return (
     <>
-      {props.children}
       <Formik
         initialValues={{ email: '', password: '', isSaveData: false }}
         validationSchema={LOG_IN_SHEMA}
@@ -29,17 +28,20 @@ const LogInForm = (props) => {
           // }
         }}
       >
-        {({ errors, touched, isValidating }) => (
-          <Form className={cx(styles['form-container'], styles['log-in'])}>
+        {() => (
+          <Form className={cx(styles['form-container'])}>
+            {props.children}
             <Input name="email" type="text" placeholder="Email address" />
             <Input name="password" type="password" placeholder="Password" />
-            <div>
-              <label>
-                <Input name="isSaveData" type="checkbox" /> Remember Me
+            <div className={cx(styles['form-enterance-settings'])}>
+              <label className={cx(styles['checkbox-field'])}>
+                <Field name="isSaveData" type="checkbox" /> Remember Me
               </label>
               <a href="#">Forgot password?</a>
             </div>
-            <button type="submit">LOGIN</button>
+            <button type="submit" className={cx(styles['form-submit'])}>
+              LOGIN
+            </button>
           </Form>
         )}
       </Formik>

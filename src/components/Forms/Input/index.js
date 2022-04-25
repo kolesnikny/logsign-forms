@@ -12,12 +12,12 @@ const Input = ({ name, ...rest }) => {
             [styles.invalidInput]: meta.touched && meta.error,
           });
           return (
-            <>
+            <label>
               <input {...field} className={classNames} {...rest}></input>
               {meta.touched && meta.error && (
                 <div className={styles.errorMessage}>{meta.error}</div>
               )}
-            </>
+            </label>
           );
         }}
       </Field>
