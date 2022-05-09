@@ -20,8 +20,16 @@ const SignUpForm = (props) => {
           isSubscribe: false,
         }}
         validationSchema={SIGN_UP_SHEMA}
-        onSubmit={(values) => {
+        onSubmit={async (values) => {
+          const response = await fetch('http://127.0.0.1:3001/signup', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
           console.log(values);
+          return await response.json();
         }}
       >
         {({ values, errors }) => (

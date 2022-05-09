@@ -1,0 +1,10 @@
+POST http://127.0.0.1:3001/signup HTTP/1.1
+Content-Type: application/json
+
+{"firstName": "Jhon",
+    "lastName": "Smith",
+    "displayName": "user1",
+    "email": "user1@gmail.com",
+    "password": "sdagwe2",
+    "role":"buyer",
+    "isSubscribe": true}
