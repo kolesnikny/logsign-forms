@@ -1,4 +1,5 @@
 const db = new Map();
+const fs = require('fs');
 
 class User {
   constructor({
@@ -20,6 +21,24 @@ class User {
     this.isSubscribe = isSubscribe;
 
     db.set(this.id, this);
+    fs.readFile('./temporally-db.json', 'utf8', function (err, data) {
+      let obj = JSON.parse(data);
+      console.log(obj);
+      //obj.push(this);
+      let strNotes = JSON.stringify(obj);
+      fs.writeFile('./temporally-db.json', strNotes, function (err) {
+        if (err) return console.log(err);
+        console.log('Note added');
+      });
+    });
+    // fs.writeFileSync('../temporally-db.json', JSON.stringify(this), (err) => {
+    //   if (err) {
+    //     console.log(err);
+    //     return;
+    //   }
+    //   console.log('OOOOKKKK');
+    // });
+    // console.log(JSON.stringify(this));
     return Promise.resolve(this);
   }
 }
