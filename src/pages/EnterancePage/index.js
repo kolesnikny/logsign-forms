@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FormHeader from '../../components/Forms/FormHeader';
+import Header from '../../components/Header';
 import LogInForm from '../../components/Forms/LogInForm';
 import SignUpForm from '../../components/Forms/SignUpForm';
 import styles from './EnterancePage.module.css';
@@ -7,9 +7,8 @@ import styles from './EnterancePage.module.css';
 class EntrancePage extends Component {
   constructor(props) {
     super(props);
-    // isNewUser false === signup
-    // true === login
     this.state = {
+      user: null,
       isNewUser: false,
     };
   }
@@ -20,6 +19,10 @@ class EntrancePage extends Component {
     });
   };
 
+  changeUser = (logUser) => {
+    this.setState({ user: logUser });
+  };
+
   LogInForm = () => {
     return <div />;
   };
@@ -27,14 +30,14 @@ class EntrancePage extends Component {
   render() {
     const wrapperForm = this.state.isNewUser ? (
       <>
-        <SignUpForm>
+        <SignUpForm userChange={this.changeUser}>
           <h3>CREATE AN ACCOUNT</h3>
           <p>We always keep your name and email address private.</p>
         </SignUpForm>
       </>
     ) : (
       <>
-        <LogInForm>
+        <LogInForm userChange={this.changeUser}>
           <h3>LOGIN TO YOUR ACCOUNT</h3>
         </LogInForm>
       </>
@@ -42,10 +45,7 @@ class EntrancePage extends Component {
 
     return (
       <div className={styles['enterance-container']}>
-        <FormHeader
-          link={this.state.isNewUser}
-          changeLink={this.changeIsNewUser}
-        />
+        <Header link={this.state.isNewUser} changeLink={this.changeIsNewUser} />
         {wrapperForm}
       </div>
     );

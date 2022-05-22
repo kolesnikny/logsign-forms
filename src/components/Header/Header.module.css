@@ -1,4 +1,4 @@
-.form-header{
+.header{
     width: 100vw;
     box-sizing: border-box;
     display: flex;
@@ -7,7 +7,7 @@
     padding: 20px 30px;
 }
 
-.form-header a {
+.header a {
     display: block;
     margin: 10px;
     color: #fff;

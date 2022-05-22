@@ -21,14 +21,14 @@ const SignUpForm = (props) => {
         }}
         validationSchema={SIGN_UP_SHEMA}
         onSubmit={async (values) => {
-          const response = await fetch('http://127.0.0.1:3001/signup', {
+          const response = await fetch('/signup', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {
               'Content-Type': 'application/json',
             },
           });
-          console.log(values);
+
           return await response.json();
         }}
       >

@@ -8,10 +8,7 @@ module.exports.createUser = async (req, res, next) => {
 };
 
 module.exports.getSingleUser = async (req, res, next) => {
-  const {
-    params: { email },
-  } = req;
-
-  const user = await User.findOne(email);
+  const { body: validateBody } = req;
+  const user = await User.findOne(validateBody);
   res.status(200).send(user);
 };

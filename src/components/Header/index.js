@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import style from './FormHeader.module.css';
+import style from './Header.module.css';
 
-const FormHeader = (props) => {
+const Header = (props) => {
   return (
-    <div className={style['form-header']}>
+    <div className={style['header']}>
       <a href="/">
         <img
           alt="squadhelp"
@@ -22,4 +22,4 @@ const FormHeader = (props) => {
   );
 };
 
-export default FormHeader;
+export default Header;
